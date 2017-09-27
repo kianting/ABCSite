@@ -4,20 +4,20 @@
 
 <h1>Blogs</h1>
 
-<table class="table table-striped">
+<table class="table table-responsive table-striped table-hover">
 	<thead>
-		<tr>
-			<th scope="row">Image</th>
-			<th scope="row">Title</th>
-			<th scope="row">Entry</th>
-			<th scope="row" colspan="4"></th>
+		<tr style="background-color: black; color: white;">
+			<th>Image</th>
+			<th>Title</th>
+			<th>Entry</th>
+			<th colspan="4"></th>
 		</tr>
 	</thead>
 
 	<tbody>
 		<% @blogs.each do |blog| %>
 		<tr>
-			<td><%= image_tag blog.image.url(:medium) %></td>
+			<th scope="row" ><%= image_tag blog.image.url(:medium) %></th>
 			<td><%= blog.title %></td>
 			<td><%= blog.entry %></td>
 			<td><%= link_to 'Show', blog %></td>
