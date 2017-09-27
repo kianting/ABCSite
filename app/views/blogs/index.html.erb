@@ -29,7 +29,7 @@
 			<th class='clickable-cell' data-href='<%= blog_path(blog) %>' scope="row" ><%= link_to image_tag(blog.image.url(:medium)), blog %></th>
 			<td class='clickable-cell' data-href='<%= blog_path(blog) %>'><%= blog.title %></td>
 			<td class='clickable-cell' data-href='<%= blog_path(blog) %>'><%= blog.entry %></td>
-			<% if blog.user == current_user %>
+			<% if user_signed_in? && blog.user == current_user %>
 			<td><%= link_to 'Edit', edit_blog_path(blog) %></td>
 			<td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 			<% end %>
